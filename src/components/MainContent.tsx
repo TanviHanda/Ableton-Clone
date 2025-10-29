@@ -1,17 +1,19 @@
 import Cards from './Cards';
 import { data } from '@/data/data';
 
+type DataItem = { img?: string; title?: string; desc?: string };
+
 const MainContent = () => {
   // Split array into chunks of 3
-  const chunkArray = (arr: any[], size: number) => {
-    const chunks = [];
+  const chunkArray = (arr: DataItem[], size: number): DataItem[][] => {
+    const chunks: DataItem[][] = [];
     for (let i = 0; i < arr.length; i += size) {
       chunks.push(arr.slice(i, i + size));
     }
     return chunks;
   };
 
-  const chunks = chunkArray(data, 3);
+  const chunks = chunkArray(data as DataItem[], 3);
 
   // Headings for each group (first is Nav, then other headings)
   const headings = ["Nav", "Move in focus", "Learn more about Live 12"];

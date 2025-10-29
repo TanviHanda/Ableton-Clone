@@ -8,7 +8,7 @@ const DropdownMenu = () => {
       {/* More button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="text-black hover:underline flex items-center gap-1 font-bold "
+        className="hidden md:inline-flex text-black hover:underline items-center gap-1 font-bold"
       >
         More {isOpen ? "−" : "+" }
       </button>
